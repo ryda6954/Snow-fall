@@ -19,5 +19,5 @@ Contributors
 
 
 
-Open	issues/bugs
+Open	issues/bugs:
 I can't figure out how to make the graphic run more smoothly.
