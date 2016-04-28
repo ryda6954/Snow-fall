@@ -1,7 +1,7 @@
 # Snow-Fall
 
 Summary:
-Cute graphic where one may watch snow fall atop mountain peaks to their hearts content. 
+Cute graphic where one may watch snow fall atop mountain peaks to their hearts content. Map is randomly generated and different every time.
 
 How	to	Run:
 Merely download and compile all the files and run the program.
