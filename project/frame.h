@@ -1,8 +1,8 @@
 #ifndef FRAME_H
 #define FRAME_H
 
-const int width = 4;
-const int height = 4;
+const int width = 30;
+const int height = 10;
 
 class Frame{
 public:
@@ -14,6 +14,8 @@ public:
 	void createNextFrame();
 	void simulate();
 	void animate();
+	void random();
+	void snow();
 };
 
 
