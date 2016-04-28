@@ -1,17 +1,23 @@
 #include <iostream>
 #include <Windows.h>
+#include <iostream>
 #include "frame.h"
+#include <stdlib.h>
+#include "generate.h"
 
 int main(){
-	char grid3[4][4] = 
+
+	system("CLS");
+	char grid3[width][height] = 
 	  {
-        {'*','*',' ','#'},
         {'*',' ',' ','#'},
-		{' ',' ',' ','#'},
-        {' ','*',' ','#'}
+        {' ',' ',' ','#'},
+		{'*',' ',' ',' '},
+        {' ','*',' ',' '}
     };
-	Frame f(grid3);
-	f.simulate();
-	f.printFrame();
-	f.animate();
+	Frame* f = generate();
+	f->printFrame();
+	f->simulate();
+
+	f->animate();
 }
