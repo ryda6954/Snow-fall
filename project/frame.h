@@ -16,6 +16,7 @@ public:
 	void animate();
 	void random();
 	void snow();
+	void clearSnow();
 };
 
 
