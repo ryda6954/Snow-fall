@@ -40,7 +40,7 @@ void Frame::printFrame(){ //prints out the frame
 	}
 }
 
-int Frame::snowFall { //this moves the "snow" (*)
+int Frame::snowFall() { //this moves the "snow" (*)
 	snow();
 	
 	int c = 0;
