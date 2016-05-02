@@ -6,7 +6,7 @@
 #include <cmath>
 #include <climits>
 
-Frame* generate();
+Frame* generate(char in_precip);
 
 
-#endif	
+#endif

@@ -17,7 +17,8 @@ static inline uint64_t getCycles() //counts computer processes to be used as see
 }
 
 
-Frame::Frame(char grid2[width][height]) { //initializes Frame with a grid array
+Frame::Frame(char grid2[width][height], char in_precip) { //initializes Frame with a grid array
+    precip = in_precip;
 	for(int i = 0; i < width; i++){
 		for(int j = 0; j < height; j++){
 			grid[i][j] = grid2[i][j];
@@ -42,13 +43,13 @@ void Frame::printFrame(){ //prints out the frame
 
 int Frame::snowFall() { //this moves the "snow" (*)
 	snow();
-	
+
 	int c = 0;
 	for(int i = 0; i < width; i++){
 		for(int j = height-1; j >= 0; j--){
-			if(grid[i][j] == '*' && (grid[i][j+1] == ' ' || j == height-1)){ //if there is an empty space under * then * is moved and the space it left is empty
+			if(grid[i][j] == precip && (grid[i][j+1] == ' ' || j == height-1)){ //if there is an empty space under * then * is moved and the space it left is empty
 				if(j != height-1){
-					grid[i][j+1] = '*';
+					grid[i][j+1] = precip;
 				}
 				grid[i][j] = ' ';
 				c++; //keeps from crashing by making sure snow is still moving
@@ -59,7 +60,7 @@ int Frame::snowFall() { //this moves the "snow" (*)
 }
 
 void Frame::createNextFrame(){ //makes the next frame
-	next = new Frame(grid);
+	next = new Frame(grid, precip);
 }
 
 void Frame::simulate(){ //creates linked list of frames
@@ -83,9 +84,9 @@ void Frame::animate(){  //actually animates all of the frames together
 void Frame::snow(){ //makes snow
 	for(int i = 0; i < width; i++){  //snow is created in the top row of the grid
 		srand(getCycles());  //random seed
-		int y = (rand() % 30); 
+		int y = (rand() % 30);
 		if(y <= 1){  //chances of snow appearing
-		grid[i][0] = '*';
+		grid[i][0] = precip;
 		}
 	}
 }
@@ -97,5 +98,5 @@ void Frame::clearSnow(){  //work in progress pay no mind
 		if(y <= 1){
 			grid[i][0] = 'v';
 		}
-	}	
+	}
 }
